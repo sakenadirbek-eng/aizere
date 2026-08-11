@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="ИП Айзере — линолеум, ламинат, икемді мәрмәр, бамбук панельдері және бөлмеаралық есіктер. Астана қаласы." />
+<title>ИП Айзере — үйіңізге арналған материалдар</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#1b2924;--muted:#607069;--cream:#f5f1e8;--orange:#e96f39;--sage:#dce2ce;--line:#d7d6cd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Manrope,Arial,sans-serif}
+.container{max-width:1180px;margin:auto;padding:0 28px}
+
+/* ХЕДЕР */
+.header{height:84px;background:var(--cream);position:sticky;top:0;z-index:50;border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+.header.scrolled{border-color:var(--line);box-shadow:0 4px 18px #26372d0d}
+.nav{height:100%;display:flex;align-items:center;gap:32px}
+.brand{color:var(--ink);font-size:23px;font-weight:800;letter-spacing:-1px;text-decoration:none;white-space:nowrap}
+.brand span{font-family:"Playfair Display",serif;font-size:18px;border:1.5px solid var(--ink);border-radius:50%;padding:1px 4px;margin-right:4px}
+.nav-links{display:flex;gap:26px;margin:auto}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;padding-bottom:2px;border-bottom:1.5px solid transparent;transition:border-color .2s}
+.nav-links a:hover{border-color:var(--orange)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.phone{color:var(--ink);text-decoration:none;font-size:13px;font-weight:700;border-bottom:1px solid var(--ink);padding-bottom:3px;white-space:nowrap}
+.lang{display:flex;border:1.5px solid var(--ink);border-radius:20px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--ink);font:800 11px Manrope,sans-serif;padding:5px 11px;cursor:pointer;transition:background .2s,color .2s}
+.lang button.active{background:var(--ink);color:var(--cream)}
+.menu-btn{display:none}
+
+/* HERO */
+.hero{overflow:hidden;background:#e2e6d7;padding:60px 0 66px}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:65px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.6px;color:#6a746a;font-weight:800;margin:0 0 19px}
+.hero h1,.section-heading h2,.about h2,.contact h2{font-family:"Playfair Display",serif;font-size:56px;line-height:1.06;letter-spacing:-2.4px;margin:0;font-weight:600}
+.hero h1 em,h2 em{font-style:normal;font-weight:600;color:var(--orange)}
+.hero-text{font-size:16px;line-height:1.7;color:#48564f;max-width:470px;margin:24px 0 29px}
+.hero-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap}
+.btn{font-size:12px;font-weight:800;text-decoration:none;display:inline-block}
+.btn-primary{background:var(--ink);color:#fff;padding:16px 22px;border:none;cursor:pointer;font-family:Manrope,sans-serif;transition:background .2s}
+.btn-primary:hover{background:#0f1a16}
+.btn-primary span{font-size:16px;margin-left:10px}
+.btn-link{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px}
+.hero-note{margin-top:34px;color:#617067;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px}
+.hero-note i{display:inline-grid;place-items:center;background:#f5f1e8;border-radius:50%;height:20px;width:20px;color:var(--orange);font-style:normal;flex-shrink:0}
+.hero-visual{height:440px;position:relative}
+.hero-image{height:100%;width:88%;margin-left:auto;background:linear-gradient(0deg,rgba(18,35,29,.10),rgba(18,35,29,.02)),url('https://images.unsplash.com/photo-1758448755856-01d3add0177b?auto=format&fit=crop&w=1400&q=78') center/cover}
+.float-card{position:absolute;background:#f9f6ef;box-shadow:0 12px 30px #26372d20;padding:16px 18px;display:flex;align-items:center;gap:10px}
+.card-top{top:34px;left:0}
+.card-top strong{font:600 30px "Playfair Display",serif;color:var(--orange)}
+.card-top span,.card-bottom span{font-size:10px;line-height:1.45;color:#617067}
+.card-bottom{right:-4px;bottom:27px;padding:17px}
+.card-bottom .leaf{color:var(--orange);font-size:24px}
+.card-bottom b{color:var(--ink)}
+
+/* БӨЛІМ ТАҚЫРЫБЫ */
+.section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:43px;gap:30px}
+.section-heading h2{font-size:42px;letter-spacing:-1.6px}
+.section-heading>p{max-width:290px;color:var(--muted);line-height:1.65;font-size:13px;margin:0 0 5px}
+
+/* КАТАЛОГ */
+.categories{padding:100px 0}
+.catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product-card{min-height:325px;position:relative;overflow:hidden;text-decoration:none;color:#fff;background:#6c766d}
+.product-card.wide{grid-column:span 2}
+.card-photo{position:absolute;inset:0;transition:transform .45s}
+.product-card:hover .card-photo{transform:scale(1.045)}
+.card-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,24,19,.8),rgba(13,24,19,.06) 64%)}
+.flooring .card-photo{background:url('https://images.unsplash.com/photo-1547333101-6bb18e609b2f?auto=format&fit=crop&w=900&q=78') center/cover}
+.laminate .card-photo{background:url('https://images.unsplash.com/photo-1646592474103-cfd22d1d9e34?auto=format&fit=crop&w=900&q=78') center/cover}
+.marble .card-photo{background:url('https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?auto=format&fit=crop&w=900&q=78') center/cover}
+.bamboo .card-photo{background:url('https://images.unsplash.com/photo-1722109997425-40f920848aed?auto=format&fit=crop&w=900&q=78') center/cover}
+.corners .card-photo{background:radial-gradient(circle at 25% 70%,#dfd5c3 0 4%,transparent 4.5%),linear-gradient(135deg,#718d7a 0 48%,#e6cdb0 48% 52%,#6b7d70 52%)}
+.doors .card-photo{background:url('https://images.unsplash.com/photo-1721134110034-48d7fdbc2de5?auto=format&fit=crop&w=900&q=78') center/cover}
+.card-content{position:absolute;z-index:1;inset:auto 20px 18px}
+.card-content .cat{font-size:9px;letter-spacing:1px;text-transform:uppercase;margin:0 0 7px;opacity:.85}
+.card-content h3{font:600 26px/1.08 "Playfair Display",serif;margin:0 0 10px;letter-spacing:-.8px}
+.price{display:block;font-size:12px;line-height:1.45;margin:0 0 13px;color:#fff;font-weight:700}
+.card-content .more{font-size:10px;font-weight:800;border-bottom:1px solid #fff;padding-bottom:3px}
+.card-content .more b{font-size:13px;margin-left:6px}
+
+/* КАЛЬКУЛЯТОР */
+.calc{padding:90px 0;background:var(--sage)}
+.calc-card{background:#f9f6ef;padding:42px 44px;max-width:720px;margin:0 auto}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.calc-field label{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+.calc-field input,.calc-field select{width:100%;padding:12px 14px;border:1.5px solid var(--line);background:#fff;font:600 14px Manrope,sans-serif;color:var(--ink);border-radius:4px}
+.calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--orange)}
+.calc-out{background:#fff;border-left:3px solid var(--orange);padding:20px 22px;margin-top:22px;display:none}
+.calc-out.show{display:block}
+.calc-out .line{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);padding:5px 0}
+.calc-out .line b{color:var(--ink);font-weight:800}
+.calc-out .total{border-top:1px solid var(--line);margin-top:10px;padding-top:12px;font-size:16px}
+.calc-out .total b{font:600 22px "Playfair Display",serif;color:var(--orange)}
+.calc-note{font-size:11px;color:var(--muted);line-height:1.6;margin:18px 0 0}
+
+/* ЛЮСТРАЛАР */
+.lustra{padding:100px 0;background:#f9f6ef}
+.filters{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.fgroup{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fgroup>span{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-right:2px}
+.fbtn{border:1.5px solid var(--line);background:#fff;color:var(--ink);font:700 12px Manrope,sans-serif;padding:7px 14px;border-radius:20px;cursor:pointer;transition:all .18s}
+.fbtn:hover{border-color:var(--orange)}
+.fbtn.on{background:var(--ink);border-color:var(--ink);color:#f9f6ef}
+.fcount{font-size:12px;color:var(--muted);margin:0 0 22px}
+.fcount b{color:var(--ink)}
+.lgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.lcard{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.lcard:hover{box-shadow:0 10px 28px #26372d1a;transform:translateY(-3px)}
+.lpic{background:#e2e6d7;aspect-ratio:1/1;position:relative;overflow:hidden}
+.lpic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+.lcard:hover .lpic img{transform:scale(1.05)}
+.lcode{position:absolute;top:10px;left:10px;background:var(--ink);color:#f9f6ef;font:800 10px Manrope,sans-serif;padding:4px 9px;letter-spacing:.05em;border-radius:3px}
+.lbody{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+.lname{font:600 18px/1.2 "Playfair Display",serif;margin:0 0 6px;color:var(--ink)}
+.lmeta{font-size:11px;color:var(--muted);line-height:1.6;margin:0 0 12px}
+.lprice{font-size:14px;font-weight:800;color:var(--orange);margin:0 0 14px}
+.lprice.ask{color:var(--muted);font-weight:700;font-size:12px}
+.lask{margin-top:auto;display:block;text-align:center;background:#1f7a4d;color:#fff;text-decoration:none;font:800 11px Manrope,sans-serif;padding:11px;border-radius:4px;transition:opacity .2s}
+.lask:hover{opacity:.88}
+.lempty{grid-column:1/-1;text-align:center;padding:50px 20px;color:var(--muted);font-size:14px}
+.lseller{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#fff;border:1px solid var(--line);border-left:3px solid #1f7a4d;padding:16px 20px;margin-bottom:22px;flex-wrap:wrap}
+.lseller-lab{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:0 0 4px}
+.lseller-tel{font:600 21px "Playfair Display",serif;color:var(--ink);text-decoration:none}
+.lseller-wa{background:#1f7a4d;color:#fff;text-decoration:none;font:800 11px Manrope,sans-serif;padding:11px 18px;border-radius:4px;white-space:nowrap;transition:opacity .2s}
+.lseller-wa:hover{opacity:.88}
+.lnote{font-size:11px;color:var(--muted);line-height:1.7;margin:26px 0 0;padding:16px 18px;background:#fff;border-left:3px solid var(--orange)}
+@media(max-width:900px){.lgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.lustra{padding:60px 0}.lgrid{grid-template-columns:repeat(2,1fr);gap:10px}.lname{font-size:15px}.lbody{padding:12px}.filters{gap:14px}}
+
+/* ПІКІРЛЕР */
+.reviews{padding:100px 0;background:var(--cream)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{background:#f9f6ef;padding:28px 26px;border-top:3px solid var(--orange)}
+.stars{color:var(--orange);font-size:13px;letter-spacing:2px;margin:0 0 12px}
+.review p.txt{font-size:14px;line-height:1.7;color:#4c5a53;margin:0 0 18px}
+.review .who{font-size:12px;font-weight:800;color:var(--ink);margin:0}
+.review .who small{display:block;font-weight:600;color:var(--muted);margin-top:3px;font-size:11px}
+
+/* СҰРАҚ-ЖАУАП */
+.faq{padding:100px 0;background:#f9f6ef}
+.faq-list{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:0;text-align:left;padding:22px 40px 22px 0;font:800 15px Manrope,sans-serif;color:var(--ink);cursor:pointer;position:relative;line-height:1.5}
+.faq-q:after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--orange);transition:transform .25s}
+.faq-item.open .faq-q:after{transform:translateY(-50%) rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{font-size:14px;line-height:1.75;color:var(--muted);margin:0 0 22px;padding-right:40px}
+.faq-item.open .faq-a{max-height:340px}
+
+/* БІЗ ТУРАЛЫ */
+.about{background:#1b2924;color:#f8f4ea;padding:95px 0}
+.about-grid{display:grid;grid-template-columns:.93fr 1.07fr;gap:80px;align-items:center}
+.about-image{height:420px;background:url('https://images.unsplash.com/photo-1615528650248-8630bcd26814?auto=format&fit=crop&w=1000&q=78') center/cover;position:relative}
+.about-sticker{position:absolute;right:-25px;bottom:28px;background:var(--orange);color:#fff;padding:17px 19px;font:600 17px/1.2 "Playfair Display",serif;max-width:200px}
+.about-sticker span{display:block;font-family:Manrope;margin-top:12px}
+.about .eyebrow{color:#b6c0b3}
+.about h2{color:#f7f4e9;font-size:42px;letter-spacing:-1.6px}
+.about-copy>p.lead{color:#c4cec6;line-height:1.75;font-size:14px;max-width:470px;margin:23px 0 35px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #6a766d;padding-top:22px;gap:14px}
+.benefits div{display:flex;gap:10px}
+.benefits b{color:var(--orange);font-size:12px}
+.benefits span{font-size:11px;line-height:1.55;color:#d2d8d1}
+
+/* БАЙЛАНЫС */
+.contact{padding:100px 0 92px;background:#e9dbcd}
+.contact-wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:50px}
+.contact h2{font-size:42px;letter-spacing:-1.6px}
+.contact-text{font-size:14px;line-height:1.7;color:#57635e;max-width:410px;margin:23px 0 0}
+.contact-box{background:#f9f6ef;padding:36px 38px 30px;min-width:400px}
+.big-phone{font:600 26px "Playfair Display",serif;color:var(--ink);display:block;text-decoration:none;margin-bottom:22px}
+.chat-link{display:flex;align-items:center;color:#fff;text-decoration:none;font-size:12px;font-weight:800;padding:14px 15px;margin-bottom:9px;transition:opacity .2s}
+.chat-link:hover{opacity:.88}
+.chat-link i{font-style:normal;font-size:16px;margin-right:10px}
+.chat-link b{margin-left:auto;font-size:15px}
+.wa{background:#1f7a4d}
+.tg{background:#2b7cb8}
+.ig{background:#a3396e}
+.pay{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.pay-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 10px}
+.pay-badges{display:flex;flex-wrap:wrap;gap:7px}
+.pay-badges span{font-size:11px;font-weight:700;background:#eee9dc;color:#4c5a53;padding:6px 10px;border-radius:3px}
+.addr{font-size:12px;line-height:1.7;color:#5c6a63;margin:18px 0 0}
+.addr b{color:var(--ink)}
+.map-link{display:inline-block;margin-top:10px;font-size:11px;font-weight:800;color:var(--orange);text-decoration:none;border-bottom:1px solid var(--orange);padding-bottom:2px}
+
+/* ФУТЕР */
+footer{background:var(--ink);color:#e4e8de;padding:28px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-inner .brand{color:#f2eee4;font-size:18px}
+.footer-inner .brand span{font-size:13px;border-color:#f2eee4}
+.footer-inner p,.footer-inner>a{font-size:11px;color:#aab5ad;text-decoration:none;margin:0}
+
+/* ҚАЛҚЫМА WHATSAPP */
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:9px;background:#1f7a4d;color:#fff;text-decoration:none;padding:13px 18px;border-radius:30px;font-size:12px;font-weight:800;box-shadow:0 8px 24px #1f7a4d55;transition:transform .2s}
+.fab:hover{transform:translateY(-2px)}
+.fab i{font-style:normal;font-size:16px}
+
+/* МОБИЛЬДІ */
+@media(max-width:900px){.catalog-grid{grid-template-columns:1fr 1fr}.review-grid{grid-template-columns:1fr}.contact-wrap{display:block}.contact-box{min-width:auto;margin-top:32px}}
+@media(max-width:760px){
+.container{padding:0 20px}
+.header{height:64px}
+.nav{gap:12px}
+.nav-links{display:none}
+.phone{display:none}
+.nav-right{margin-left:auto}
+.menu-btn{display:block;border:0;background:none;width:32px;height:28px;cursor:pointer;padding:0}
+.menu-btn i{display:block;width:24px;height:2px;background:var(--ink);margin:6px}
+.nav.menu-open .nav-links{display:flex;position:absolute;top:64px;left:0;right:0;background:var(--cream);padding:18px 20px;flex-direction:column;gap:16px;box-shadow:0 12px 20px #26372d17}
+.hero{padding:38px 0 44px}
+.hero-grid,.about-grid{grid-template-columns:1fr;gap:35px}
+.hero h1{font-size:40px;letter-spacing:-1.6px}
+.hero-visual{height:320px}
+.hero-image{width:94%}
+.section-heading{display:block}
+.section-heading h2,.about h2,.contact h2{font-size:32px;letter-spacing:-1.2px}
+.section-heading>p{margin-top:16px;max-width:none}
+.categories,.reviews,.faq,.calc,.contact{padding:60px 0}
+.about{padding:60px 0}
+.catalog-grid{grid-template-columns:1fr;gap:10px}
+.product-card,.product-card.wide{grid-column:span 1;min-height:230px}
+.calc-card{padding:26px 20px}
+.calc-row{grid-template-columns:1fr}
+.about-image{height:300px}
+.about-sticker{right:0}
+.benefits{grid-template-columns:1fr}
+.contact-box{padding:26px 22px}
+.footer-inner p{display:none}
+.fab{right:14px;bottom:14px;padding:12px 16px}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="top">
+  <div class="container nav">
+    <a class="brand" href="#top"><span>ИП</span> Айзере</a>
+    <nav class="nav-links">
+      <a href="#catalog" data-i18n="nav.catalog">Каталог</a>
+      <a href="#lustra" data-i18n="nav.lustra">Люстралар</a>
+      <a href="#calc" data-i18n="nav.calc">Калькулятор</a>
+      <a href="#reviews" data-i18n="nav.reviews">Пікірлер</a>
+      <a href="#faq" data-i18n="nav.faq">Сұрақ-жауап</a>
+      <a href="#about" data-i18n="nav.about">Біз туралы</a>
+      <a href="#contacts" data-i18n="nav.contacts">Байланыс</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button type="button" data-lang="kk" class="active">ҚАЗ</button>
+        <button type="button" data-lang="ru">РУС</button>
+      </div>
+      <a class="phone" href="tel:+77024708898">+7 (702) 470-88-98</a>
+      <button class="menu-btn" aria-label="Меню" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Жайлы әрі әдемі үй үшін</p>
+        <h1 data-i18n-html="hero.title">Кеңістікті <em>құрайтын</em> материалдар</h1>
+        <p class="hero-text" data-i18n="hero.text">Еден жабындары, қабырға панельдері және бөлмеаралық есіктер — қажеттінің барлығын бір жерден таңдаңыз.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#catalog"><span data-i18n="hero.btn">Каталогты қарау</span> <span>↗</span></a>
+          <a class="btn btn-link" href="#calc" data-i18n="hero.btn2">Мөлшерін есептеу</a>
+        </div>
+        <div class="hero-note"><i>✓</i> <span data-i18n="hero.note">Материал таңдауға және мөлшерін есептеуге көмектесеміз</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image"></div>
+        <div class="float-card card-top"><strong>7</strong><span data-i18n-html="hero.card1">тауар<br />санаты</span></div>
+        <div class="float-card card-bottom"><span class="leaf">✦</span><span data-i18n-html="hero.card2">Интерьеріңізге<br /><b>қажеттінің бәрі</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАТАЛОГ -->
+  <section class="categories" id="catalog">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="cat.eyebrow">Біздің каталог</p>
+          <h2 data-i18n-html="cat.title">Өзіңізге <em>қажеттісін</em> таңдаңыз</h2>
+        </div>
+        <p data-i18n="cat.sub">Үй әрлеуге және интерьерді жаңартуға арналған сапалы материалдар.</p>
+      </div>
+      <div class="catalog-grid">
+        <a class="product-card wide flooring" href="#contacts"><div class="card-photo"></div><div class="card-content">
+          <p class="cat" data-i18n="cat.g1">01 / Еден жабындары</p>
+          <h3 data-i18n="cat.linoleum">Линолеум</h3>
+          <strong class="price">550 – 4 500 ₸</strong>
+          <span class="more"><span data-i18n="cat.order">Тапсырыс беру</span> <b>↗</b></span>
+        </div></a>
+        <a class="product-card wide laminate" href="#contacts"><div class="card-photo"></div><div class="card-content">
+          <p class="cat" data-i18n="cat.g1b">02 / Еден жабындары</p>
+          <h3 data-i18n="cat.laminate">Ламинат</h3>
+          <strong class="price">3 500 – 12 000 ₸</strong>
+          <span class="more"><span data-i18n="cat.order">Тапсырыс беру</span> <b>↗</b></span>
+        </div></a>
+        <a class="product-card marble" href="#contacts"><div class="card-photo"></div><div class="card-content">
+          <p class="cat" data-i18n="cat.g2">03 / Қабырға жабындары</p>
+          <h3 data-i18n-html="cat.marble">Икемді<br />мәрмәр</h3>
+          <strong class="price">7 500 – 10 500 ₸</strong>
+          <span class="more"><span data-i18n="cat.order">Тапсырыс беру</span> <b>↗</b></span>
+        </div></a>
+        <a class="product-card bamboo" href="#contacts"><div class="card-photo"></div><div class="card-content">
+          <p class="cat" data-i18n="cat.g2b">04 / Қабырға жабындары</p>
+          <h3 data-i18n-html="cat.bamboo">Бамбук<br />панельдері</h3>
+          <strong class="price">9 500 – 12 000 ₸</strong>
+          <span class="more"><span data-i18n="cat.order">Тапсырыс беру</span> <b>↗</b></span>
+        </div></a>
+        <a class="product-card corners" href="#contacts"><div class="card-photo"></div><div class="card-content">
+          <p class="cat" data-i18n="cat.g3">05 / Қосалқы бөлшектер</p>
+          <h3 data-i18n-html="cat.corners">Бұрыштықтар<br />мен желім</h3>
+          <strong class="price" data-i18n-html="cat.cornersPrice">бұрыштық: 1 300 – 1 500 ₸<br />желім: 1 000 – 2 500 ₸</strong>
+          <span class="more"><span data-i18n="cat.order">Тапсырыс беру</span> <b>↗</b></span>
+        </div></a>
+        <a class="product-card doors" href="#contacts"><div class="card-photo"></div><div class="card-content">
+          <p class="cat" data-i18n="cat.g4">06 / Есіктер</p>
+          <h3 data-i18n-html="cat.doors">Бөлмеаралық<br />есіктер</h3>
+          <strong class="price">28 000 – 30 000 ₸</strong>
+          <span class="more"><span data-i18n="cat.order">Тапсырыс беру</span> <b>↗</b></span>
+        </div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЛЮСТРАЛАР -->
+  <section class="lustra" id="lustra">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="lu.eyebrow">Жарық · люстралар</p>
+          <h2 data-i18n-html="lu.title">Әр люстраның <em>өз коды</em> бар</h2>
+        </div>
+        <p data-i18n="lu.sub">Ұнаған люстраның кодын жазып жіберсеңіз жеткілікті — бағасы мен бар-жоғын бірден айтамыз.</p>
+      </div>
+
+      <div class="filters">
+        <div class="fgroup" id="fStyle">
+          <span data-i18n="lu.fStyle">Стилі</span>
+          <button class="fbtn on" data-v="all" data-i18n="lu.all">Барлығы</button>
+          <button class="fbtn" data-v="modern" data-i18n="lu.modern">Заманауи</button>
+          <button class="fbtn" data-v="classic" data-i18n="lu.classic">Классикалық</button>
+          <button class="fbtn" data-v="loft" data-i18n="lu.loft">Лофт</button>
+          <button class="fbtn" data-v="minimal" data-i18n="lu.minimal">Минимализм</button>
+        </div>
+        <div class="fgroup" id="fRoom">
+          <span data-i18n="lu.fRoom">Бөлме</span>
+          <button class="fbtn on" data-v="all" data-i18n="lu.all">Барлығы</button>
+          <button class="fbtn" data-v="hall" data-i18n="lu.hall">Қонақ бөлме</button>
+          <button class="fbtn" data-v="bed" data-i18n="lu.bed">Жатын бөлме</button>
+          <button class="fbtn" data-v="kitchen" data-i18n="lu.kitchen">Ас үй</button>
+        </div>
+      </div>
+
+      <div class="lseller">
+        <div>
+          <p class="lseller-lab" data-i18n="lu.sellerLab">Люстра бойынша жеке сатушы</p>
+          <a class="lseller-tel" id="lSellerTel" href="tel:+77004708898">+7 (700) 470-88-98</a>
+        </div>
+        <a class="lseller-wa" id="lSellerWa" href="#" target="_blank" rel="noreferrer" data-i18n="lu.sellerWa">WhatsApp-қа жазу ↗</a>
+      </div>
+
+      <p class="fcount" id="lCount"></p>
+      <div class="lgrid" id="lGrid"></div>
+
+      <p class="lnote" data-i18n="lu.note">Мұндағы суреттер — стильді көрсетуге арналған үлгі фотосуреттер, дүкендегі нақты тауардың суреті емес. Кодын жазып хабарласаңыз, сол люстраның нақты фотосын жібереміз.</p>
+    </div>
+  </section>
+
+  <!-- КАЛЬКУЛЯТОР -->
+  <section class="calc" id="calc">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="calc.eyebrow">Ыңғайлы есептеу</p>
+          <h2 data-i18n-html="calc.title">Қанша материал <em>керегін</em> есептеңіз</h2>
+        </div>
+        <p data-i18n="calc.sub">Бөлменің өлшемдерін енгізіңіз — қажетті аумақты және шамамен алғандағы сомасын көрсетеміз.</p>
+      </div>
+
+      <div class="calc-card">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="cLen" data-i18n="calc.len">Ұзындығы, м</label>
+            <input type="number" id="cLen" min="0" step="0.1" placeholder="5" />
+          </div>
+          <div class="calc-field">
+            <label for="cWid" data-i18n="calc.wid">Ені, м</label>
+            <input type="number" id="cWid" min="0" step="0.1" placeholder="4" />
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="cMat" data-i18n="calc.mat">Материал</label>
+            <select id="cMat">
+              <option value="1200" data-i18n="calc.optLino">Линолеум — 1 200 ₸/м²</option>
+              <option value="5500" data-i18n="calc.optLam">Ламинат — 5 500 ₸/м²</option>
+              <option value="8500" data-i18n="calc.optMar">Икемді мәрмәр — 8 500 ₸/м²</option>
+              <option value="10500" data-i18n="calc.optBam">Бамбук панелі — 10 500 ₸/м²</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="cRes" data-i18n="calc.reserve">Қор (кесуге), %</label>
+            <select id="cRes">
+              <option value="5">5%</option>
+              <option value="10" selected>10%</option>
+              <option value="15">15%</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="cGo" style="width:100%;margin-top:8px" data-i18n="calc.go">Есептеу</button>
+
+        <div class="calc-out" id="cOut">
+          <div class="line"><span data-i18n="calc.rArea">Бөлме аумағы</span><b id="rArea">—</b></div>
+          <div class="line"><span data-i18n="calc.rTotal">Қормен бірге</span><b id="rTotal">—</b></div>
+          <div class="line"><span data-i18n="calc.rPrice">1 м² бағасы</span><b id="rPrice">—</b></div>
+          <div class="line total"><span data-i18n="calc.rSum">Шамамен сомасы</span><b id="rSum">—</b></div>
+          <a class="btn btn-primary" id="cSend" href="#" target="_blank" rel="noreferrer" style="display:block;text-align:center;margin-top:18px" data-i18n="calc.send">Есепті WhatsApp-қа жіберу</a>
+        </div>
+
+        <p class="calc-note" data-i18n="calc.note">Есеп шамамен берілген: нақты баға материалдың нақты түріне, орамының еніне және қалдықтарға байланысты өзгеруі мүмкін. Дәл есеп үшін бізге хабарласыңыз.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПІКІРЛЕР -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="rev.eyebrow">Тұтынушы пікірлері</p>
+          <h2 data-i18n-html="rev.title">Бізге <em>сенім артқандар</em></h2>
+        </div>
+        <p data-i18n="rev.sub">Бізден материал сатып алған тұтынушыларымыздың пікірлері.</p>
+      </div>
+      <div class="review-grid">
+        <div class="review">
+          <p class="stars">★★★★★</p>
+          <p class="txt" data-i18n="rev.t1">Линолеумды осы жерден алдық. Сапасы жақсы, түсі суреттегідей шықты. Жеткізу де уақытында болды.</p>
+          <p class="who">Динара Қ.<small data-i18n="rev.c1">Астана · линолеум</small></p>
+        </div>
+        <div class="review">
+          <p class="stars">★★★★★</p>
+          <p class="txt" data-i18n="rev.t2">Есік таңдауға көмектесті, өлшемін дұрыс есептеп берді. Бағасы да қолайлы болды, ұсынамын.</p>
+          <p class="who">Айдар М.<small data-i18n="rev.c2">Астана · бөлмеаралық есіктер</small></p>
+        </div>
+        <div class="review">
+          <p class="stars">★★★★★</p>
+          <p class="txt" data-i18n="rev.t3">Қабырғаға бамбук панельдерін қойдық — бөлме мүлде басқаша көрінеді. Кеңес бергендеріне рақмет.</p>
+          <p class="who">Гүлия Ж.<small data-i18n="rev.c3">Астана · бамбук панельдері</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СҰРАҚ-ЖАУАП -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="faq.eyebrow">Сұрақ-жауап</p>
+          <h2 data-i18n-html="faq.title">Жиі қойылатын <em>сұрақтар</em></h2>
+        </div>
+        <p data-i18n="faq.sub">Жауабын таппасаңыз — WhatsApp немесе телефон арқылы хабарласыңыз.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" data-i18n="faq.q1">Жеткізу қанша уақыт алады?</button>
+          <div class="faq-a"><p data-i18n="faq.a1">Астана қаласы бойынша тапсырыс берген күннен бастап 1–3 жұмыс күні ішінде жеткіземіз. Жеткізу құны — 5 000 ₸. Дүкеннен өзіңіз алып кетсеңіз, жеткізу ақысы алынбайды.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" data-i18n="faq.q3">Материалды қайтаруға бола ма?</button>
+          <div class="faq-a"><p data-i18n="faq.a3">Қаптамасы ашылмаған және тауарлық түрі сақталған жағдайда 14 күн ішінде қайтаруға немесе ауыстыруға болады. Чекті сақтап қоюыңызды сұраймыз.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" data-i18n="faq.q4">Қалай төлеуге болады?</button>
+          <div class="faq-a"><p data-i18n="faq.a4">Kaspi Pay, Halyk Bank аударымы, банк картасы және қолма-қол ақша қабылданады. Ірі тапсырыстар бойынша шот-фактура беріледі.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" data-i18n="faq.q5">Ең аз тапсырыс мөлшері бар ма?</button>
+          <div class="faq-a"><p data-i18n="faq.a5">Жоқ, ең аз тапсырыс шектеуі қойылмаған. Бір орамнан немесе бір данадан бастап сатамыз — қанша керек болса, дәл сонша ала аласыз.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" data-i18n="faq.q6">Материал мөлшерін өзім есептей алмасам ше?</button>
+          <div class="faq-a"><p data-i18n="faq.a6">Бөлменің ұзындығы мен енін жіберсеңіз жеткілікті — қажетті мөлшерді, қорын және шамамен алғандағы жалпы сомасын есептеп береміз. Сайттағы калькуляторды да пайдалана аласыз.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БІЗ ТУРАЛЫ -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-image"><div class="about-sticker" data-i18n-html="about.sticker">Жайлылық ұсақ-түйектен басталады <span>→</span></div></div>
+      <div class="about-copy">
+        <p class="eyebrow">ИП Айзере</p>
+        <h2 data-i18n-html="about.title">Материал сату —<br /><em>біздің ісіміз</em></h2>
+        <p class="lead" data-i18n="about.text">Сұранысқа ие материалдарды бір жерге жинадық: төзімді еден жабындарынан бастап, көзге жылы қабырға панельдеріне дейін. Астанада жұмыс істейміз — материалды өз қолыңызбен ұстап көріп таңдай аласыз, мөлшерін есептеп береміз.</p>
+        <div class="benefits">
+          <div><b>01</b><span data-i18n-html="about.b1">Кең әрі өзекті<br />материал таңдауы</span></div>
+          <div><b>02</b><span data-i18n-html="about.b2">Таңдауға және есептеуге<br />тегін көмек</span></div>
+          <div><b>03</b><span data-i18n-html="about.b3">Әділ баға және<br />ұсақ-түйекке мән беру</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БАЙЛАНЫС -->
+  <section class="contact" id="contacts">
+    <div class="container contact-wrap">
+      <div>
+        <p class="eyebrow" data-i18n="con.eyebrow">Бізбен байланысыңыз</p>
+        <h2 data-i18n-html="con.title">Керек материалды<br /><em>бірге таңдайық</em></h2>
+        <p class="contact-text" data-i18n="con.text">Жазыңыз немесе қоңырау шалыңыз — сұрақтарыңызға жауап беріп, материал таңдауға көмектесеміз. Жұмыс уақыты: дүйсенбі–сенбі, 10:00–18:00.</p>
+      </div>
+      <div class="contact-box">
+        <a href="tel:+77024708898" class="big-phone">+7 (702) 470-88-98</a>
+        <a class="chat-link wa" href="https://wa.me/77024708898" target="_blank" rel="noreferrer"><i>💬</i> <span data-i18n="con.wa">WhatsApp арқылы жазу</span> <b>↗</b></a>
+        <a class="chat-link tg" href="https://t.me/aizere_bot" target="_blank" rel="noreferrer"><i>✈</i> <span data-i18n="con.tg">Telegram-бот</span> <b>↗</b></a>
+        <a class="chat-link ig" href="https://instagram.com/mede9007" target="_blank" rel="noreferrer"><i>◎</i> <span data-i18n="con.ig">Instagram — @mede9007</span> <b>↗</b></a>
+
+        <div class="pay">
+          <p class="pay-title" data-i18n="con.payTitle">Төлем тәсілдері</p>
+          <div class="pay-badges">
+            <span>Kaspi Pay</span><span>Halyk Bank</span>
+            <span data-i18n="con.payCard">Банк картасы</span>
+            <span data-i18n="con.payCash">Қолма-қол</span>
+          </div>
+        </div>
+
+        <p class="addr" data-i18n-html="con.addr"><b>Астана қ., Жолымбет көшесі, 43/1</b><br />А–В блогы, №9 орын<br />Дүйсенбі–сенбі: 10:00–18:00<br /><br />Қала бойынша жеткізу — 5 000 ₸</p>
+        <a class="map-link" href="https://2gis.kz/astana/search/Жолымбет 43/1" target="_blank" rel="noreferrer" data-i18n="con.map">Картадан қарау →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="brand" href="#top"><span>ИП</span> Айзере</a>
+    <p data-i18n="foot.tag">Әдемі үйге арналған материалдар</p>
+    <a href="tel:+77024708898">+7 (702) 470-88-98</a>
+    <a href="#top" data-i18n="foot.up">Жоғарыға ↑</a>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/77024708898" target="_blank" rel="noreferrer"><i>💬</i> <span data-i18n="fab">Жазу</span></a>
+
+<script>
+/* ================== ЕКІ ТІЛ / ДВА ЯЗЫКА ================== */
+const I18N = {
+  kk: {
+    'nav.catalog':'Каталог','nav.lustra':'Люстралар','nav.calc':'Калькулятор','nav.reviews':'Пікірлер','nav.faq':'Сұрақ-жауап','nav.about':'Біз туралы','nav.contacts':'Байланыс',
+
+    'lu.eyebrow':'Жарық · люстралар',
+    'lu.title':'Әр люстраның <em>өз коды</em> бар',
+    'lu.sub':'Ұнаған люстраның кодын жазып жіберсеңіз жеткілікті — бағасы мен бар-жоғын бірден айтамыз.',
+    'lu.fStyle':'Стилі','lu.fRoom':'Бөлме','lu.all':'Барлығы',
+    'lu.modern':'Заманауи','lu.classic':'Классикалық','lu.loft':'Лофт','lu.minimal':'Минимализм',
+    'lu.hall':'Қонақ бөлме','lu.bed':'Жатын бөлме','lu.kitchen':'Ас үй',
+    'lu.ask':'Бағасын сұрау','lu.askPrice':'Бағасын сұраңыз',
+    'lu.sellerLab':'Люстра бойынша жеке сатушы','lu.sellerWa':'WhatsApp-қа жазу ↗',
+    'lu.lamps':'шам','lu.found':'Табылды: <b>%n</b> люстра','lu.empty':'Бұл сүзгі бойынша люстра табылмады. Басқа стильді таңдап көріңіз.',
+    'lu.note':'Мұндағы суреттер — стильді көрсетуге арналған үлгі фотосуреттер, дүкендегі нақты тауардың суреті емес. Кодын жазып хабарласаңыз, сол люстраның нақты фотосын жібереміз.',
+
+    'hero.eyebrow':'Жайлы әрі әдемі үй үшін',
+    'hero.title':'Кеңістікті <em>құрайтын</em> материалдар',
+    'hero.text':'Еден жабындары, қабырға панельдері және бөлмеаралық есіктер — қажеттінің барлығын бір жерден таңдаңыз.',
+    'hero.btn':'Каталогты қарау','hero.btn2':'Мөлшерін есептеу',
+    'hero.note':'Материал таңдауға және мөлшерін есептеуге көмектесеміз',
+    'hero.card1':'тауар<br>санаты','hero.card2':'Интерьеріңізге<br><b>қажеттінің бәрі</b>',
+
+    'cat.eyebrow':'Біздің каталог','cat.title':'Өзіңізге <em>қажеттісін</em> таңдаңыз',
+    'cat.sub':'Үй әрлеуге және интерьерді жаңартуға арналған сапалы материалдар.',
+    'cat.g1':'01 / Еден жабындары','cat.g1b':'02 / Еден жабындары',
+    'cat.g2':'03 / Қабырға жабындары','cat.g2b':'04 / Қабырға жабындары',
+    'cat.g3':'05 / Қосалқы бөлшектер','cat.g4':'06 / Есіктер',
+    'cat.linoleum':'Линолеум','cat.laminate':'Ламинат',
+    'cat.marble':'Икемді<br>мәрмәр','cat.bamboo':'Бамбук<br>панельдері',
+    'cat.corners':'Бұрыштықтар<br>мен желім',
+    'cat.cornersPrice':'бұрыштық: 1 300 – 1 500 ₸<br>желім: 1 000 – 2 500 ₸',
+    'cat.doors':'Бөлмеаралық<br>есіктер','cat.order':'Тапсырыс беру',
+
+    'calc.eyebrow':'Ыңғайлы есептеу',
+    'calc.title':'Қанша материал <em>керегін</em> есептеңіз',
+    'calc.sub':'Бөлменің өлшемдерін енгізіңіз — қажетті аумақты және шамамен алғандағы сомасын көрсетеміз.',
+    'calc.len':'Ұзындығы, м','calc.wid':'Ені, м','calc.mat':'Материал','calc.reserve':'Қор (кесуге), %',
+    'calc.optLino':'Линолеум — 1 200 ₸/м²','calc.optLam':'Ламинат — 5 500 ₸/м²',
+    'calc.optMar':'Икемді мәрмәр — 8 500 ₸/м²','calc.optBam':'Бамбук панелі — 10 500 ₸/м²',
+    'calc.go':'Есептеу',
+    'calc.rArea':'Бөлме аумағы','calc.rTotal':'Қормен бірге','calc.rPrice':'1 м² бағасы','calc.rSum':'Шамамен сомасы',
+    'calc.send':'Есепті WhatsApp-қа жіберу',
+    'calc.note':'Есеп шамамен берілген: нақты баға материалдың нақты түріне, орамының еніне және қалдықтарға байланысты өзгеруі мүмкін. Дәл есеп үшін бізге хабарласыңыз.',
+
+    'rev.eyebrow':'Тұтынушы пікірлері','rev.title':'Бізге <em>сенім артқандар</em>',
+    'rev.sub':'Бізден материал сатып алған тұтынушыларымыздың пікірлері.',
+    'rev.t1':'Линолеумды осы жерден алдық. Сапасы жақсы, түсі суреттегідей шықты. Жеткізу де уақытында болды.',
+    'rev.t2':'Есік таңдауға көмектесті, өлшемін дұрыс есептеп берді. Бағасы да қолайлы болды, ұсынамын.',
+    'rev.t3':'Қабырғаға бамбук панельдерін қойдық — бөлме мүлде басқаша көрінеді. Кеңес бергендеріне рақмет.',
+    'rev.c1':'Астана · линолеум','rev.c2':'Астана · бөлмеаралық есіктер','rev.c3':'Астана · бамбук панельдері',
+
+    'faq.eyebrow':'Сұрақ-жауап','faq.title':'Жиі қойылатын <em>сұрақтар</em>',
+    'faq.sub':'Жауабын таппасаңыз — WhatsApp немесе телефон арқылы хабарласыңыз.',
+    'faq.q1':'Жеткізу қанша уақыт алады?',
+    'faq.a1':'Астана қаласы бойынша тапсырыс берген күннен бастап 1–3 жұмыс күні ішінде жеткіземіз. Жеткізу құны — 5 000 ₸. Дүкеннен өзіңіз алып кетсеңіз, жеткізу ақысы алынбайды.',
+    'faq.q3':'Материалды қайтаруға бола ма?',
+    'faq.a3':'Қаптамасы ашылмаған және тауарлық түрі сақталған жағдайда 14 күн ішінде қайтаруға немесе ауыстыруға болады. Чекті сақтап қоюыңызды сұраймыз.',
+    'faq.q4':'Қалай төлеуге болады?',
+    'faq.a4':'Kaspi Pay, Halyk Bank аударымы, банк картасы және қолма-қол ақша қабылданады. Ірі тапсырыстар бойынша шот-фактура беріледі.',
+    'faq.q5':'Ең аз тапсырыс мөлшері бар ма?',
+    'faq.a5':'Жоқ, ең аз тапсырыс шектеуі қойылмаған. Бір орамнан немесе бір данадан бастап сатамыз — қанша керек болса, дәл сонша ала аласыз.',
+    'faq.q6':'Материал мөлшерін өзім есептей алмасам ше?',
+    'faq.a6':'Бөлменің ұзындығы мен енін жіберсеңіз жеткілікті — қажетті мөлшерді, қорын және шамамен алғандағы жалпы сомасын есептеп береміз. Сайттағы калькуляторды да пайдалана аласыз.',
+
+    'about.sticker':'Жайлылық ұсақ-түйектен басталады <span>→</span>',
+    'about.title':'Материал сату —<br><em>біздің ісіміз</em>',
+    'about.text':'Сұранысқа ие материалдарды бір жерге жинадық: төзімді еден жабындарынан бастап, көзге жылы қабырға панельдеріне дейін. Астанада жұмыс істейміз — материалды өз қолыңызбен ұстап көріп таңдай аласыз, мөлшерін есептеп береміз.',
+    'about.b1':'Кең әрі өзекті<br>материал таңдауы',
+    'about.b2':'Таңдауға және есептеуге<br>тегін көмек',
+    'about.b3':'Әділ баға және<br>ұсақ-түйекке мән беру',
+
+    'con.eyebrow':'Бізбен байланысыңыз',
+    'con.title':'Керек материалды<br><em>бірге таңдайық</em>',
+    'con.text':'Жазыңыз немесе қоңырау шалыңыз — сұрақтарыңызға жауап беріп, материал таңдауға көмектесеміз. Жұмыс уақыты: дүйсенбі–сенбі, 10:00–18:00.',
+    'con.wa':'WhatsApp арқылы жазу','con.tg':'Telegram-бот','con.ig':'Instagram — @mede9007',
+    'con.payTitle':'Төлем тәсілдері','con.payCard':'Банк картасы','con.payCash':'Қолма-қол',
+    'con.addr':'<b>Астана қ., Жолымбет көшесі, 43/1</b><br>А–В блогы, №9 орын<br>Дүйсенбі–сенбі: 10:00–18:00<br><br>Қала бойынша жеткізу — 5 000 ₸',
+    'con.map':'Картадан қарау →',
+
+    'foot.tag':'Әдемі үйге арналған материалдар','foot.up':'Жоғарыға ↑','fab':'Жазу'
+  },
+
+  ru: {
+    'nav.catalog':'Каталог','nav.lustra':'Люстры','nav.calc':'Калькулятор','nav.reviews':'Отзывы','nav.faq':'Вопросы','nav.about':'О нас','nav.contacts':'Контакты',
+
+    'lu.eyebrow':'Свет · люстры',
+    'lu.title':'У каждой люстры <em>свой код</em>',
+    'lu.sub':'Достаточно прислать код понравившейся люстры — сразу скажем цену и наличие.',
+    'lu.fStyle':'Стиль','lu.fRoom':'Комната','lu.all':'Все',
+    'lu.modern':'Современный','lu.classic':'Классика','lu.loft':'Лофт','lu.minimal':'Минимализм',
+    'lu.hall':'Гостиная','lu.bed':'Спальня','lu.kitchen':'Кухня',
+    'lu.ask':'Узнать цену','lu.askPrice':'Уточните цену',
+    'lu.sellerLab':'Отдельный продавец по люстрам','lu.sellerWa':'Написать в WhatsApp ↗',
+    'lu.lamps':'ламп','lu.found':'Найдено: <b>%n</b> люстр','lu.empty':'По этому фильтру люстр не найдено. Попробуйте выбрать другой стиль.',
+    'lu.note':'Изображения здесь — примерные фото для показа стиля, а не снимки конкретного товара со склада. Напишите код, и мы вышлем настоящее фото этой люстры.',
+
+    'hero.eyebrow':'Для уютного и красивого дома',
+    'hero.title':'Материалы, которые <em>создают</em> пространство',
+    'hero.text':'Напольные покрытия, стеновые панели и межкомнатные двери — подберём всё необходимое в одном месте.',
+    'hero.btn':'Смотреть каталог','hero.btn2':'Рассчитать количество',
+    'hero.note':'Поможем выбрать материал и рассчитать количество',
+    'hero.card1':'категорий<br>товаров','hero.card2':'Всё для<br><b>вашего интерьера</b>',
+
+    'cat.eyebrow':'Наш каталог','cat.title':'Выберите то, что <em>нужно вам</em>',
+    'cat.sub':'Качественные материалы для отделки и обновления интерьера.',
+    'cat.g1':'01 / Напольные покрытия','cat.g1b':'02 / Напольные покрытия',
+    'cat.g2':'03 / Стеновые покрытия','cat.g2b':'04 / Стеновые покрытия',
+    'cat.g3':'05 / Комплектующие','cat.g4':'06 / Двери',
+    'cat.linoleum':'Линолеум','cat.laminate':'Ламинат',
+    'cat.marble':'Гибкий<br>мрамор','cat.bamboo':'Бамбуковые<br>панели',
+    'cat.corners':'Уголки<br>и клей',
+    'cat.cornersPrice':'уголки: 1 300 – 1 500 ₸<br>клей: 1 000 – 2 500 ₸',
+    'cat.doors':'Межкомнатные<br>двери','cat.order':'Заказать',
+
+    'calc.eyebrow':'Удобный расчёт',
+    'calc.title':'Посчитайте, <em>сколько нужно</em> материала',
+    'calc.sub':'Введите размеры комнаты — покажем нужную площадь и примерную стоимость.',
+    'calc.len':'Длина, м','calc.wid':'Ширина, м','calc.mat':'Материал','calc.reserve':'Запас на подрезку, %',
+    'calc.optLino':'Линолеум — 1 200 ₸/м²','calc.optLam':'Ламинат — 5 500 ₸/м²',
+    'calc.optMar':'Гибкий мрамор — 8 500 ₸/м²','calc.optBam':'Бамбуковые панели — 10 500 ₸/м²',
+    'calc.go':'Рассчитать',
+    'calc.rArea':'Площадь комнаты','calc.rTotal':'С учётом запаса','calc.rPrice':'Цена за 1 м²','calc.rSum':'Примерная сумма',
+    'calc.send':'Отправить расчёт в WhatsApp',
+    'calc.note':'Расчёт примерный: итоговая цена зависит от конкретного вида материала, ширины рулона и остатков. Для точного расчёта свяжитесь с нами.',
+
+    'rev.eyebrow':'Отзывы покупателей','rev.title':'Те, кто <em>нам доверился</em>',
+    'rev.sub':'Отзывы покупателей, которые приобрели у нас материалы.',
+    'rev.t1':'Линолеум брали здесь. Качество хорошее, цвет получился как на фото. Доставили вовремя.',
+    'rev.t2':'Помогли выбрать двери и правильно рассчитать размеры. Цена оказалась адекватной, рекомендую.',
+    'rev.t3':'Поклеили на стену бамбуковые панели — комната выглядит совершенно иначе. Спасибо за совет.',
+    'rev.c1':'Астана · линолеум','rev.c2':'Астана · межкомнатные двери','rev.c3':'Астана · бамбуковые панели',
+
+    'faq.eyebrow':'Вопросы и ответы','faq.title':'Часто задаваемые <em>вопросы</em>',
+    'faq.sub':'Не нашли ответ — напишите в WhatsApp или позвоните.',
+    'faq.q1':'Сколько занимает доставка?',
+    'faq.a1':'По Астане доставляем в течение 1–3 рабочих дней с момента заказа. Стоимость доставки — 5 000 ₸. При самовывозе из магазина доставка не оплачивается.',
+    'faq.q3':'Можно ли вернуть материал?',
+    'faq.a3':'Если упаковка не вскрыта и сохранён товарный вид, вернуть или обменять можно в течение 14 дней. Просим сохранять чек.',
+    'faq.q4':'Как можно оплатить?',
+    'faq.a4':'Принимаем Kaspi Pay, перевод Halyk Bank, банковские карты и наличные. По крупным заказам выставляем счёт-фактуру.',
+    'faq.q5':'Есть ли минимальный заказ?',
+    'faq.a5':'Нет, ограничения по минимальному заказу нет. Продаём от одного рулона или одной единицы — можно взять ровно столько, сколько нужно.',
+    'faq.q6':'А если я не могу сам рассчитать количество?',
+    'faq.a6':'Достаточно прислать длину и ширину комнаты — рассчитаем нужное количество, запас и примерную общую сумму. Также можно воспользоваться калькулятором на сайте.',
+
+    'about.sticker':'Уют начинается с деталей <span>→</span>',
+    'about.title':'Продажа материалов —<br><em>наше дело</em>',
+    'about.text':'Мы собрали в одном месте востребованные материалы: от прочных напольных покрытий до тёплых на вид стеновых панелей. Работаем в Астане — материал можно посмотреть и потрогать вживую перед покупкой, а количество мы поможем рассчитать.',
+    'about.b1':'Широкий и актуальный<br>выбор материалов',
+    'about.b2':'Бесплатная помощь<br>с подбором и расчётом',
+    'about.b3':'Честная цена и<br>внимание к деталям',
+
+    'con.eyebrow':'Свяжитесь с нами',
+    'con.title':'Подберём нужный<br><em>материал вместе</em>',
+    'con.text':'Напишите или позвоните — ответим на вопросы и поможем подобрать материалы. Часы работы: понедельник–суббота, 10:00–18:00.',
+    'con.wa':'Написать в WhatsApp','con.tg':'Telegram-бот','con.ig':'Instagram — @mede9007',
+    'con.payTitle':'Способы оплаты','con.payCard':'Банковская карта','con.payCash':'Наличные',
+    'con.addr':'<b>г. Астана, ул. Жолымбет, 43/1</b><br>Блок А–В, место №9<br>Пн–Сб: 10:00–18:00<br><br>Доставка по городу — 5 000 ₸',
+    'con.map':'Посмотреть на карте →',
+
+    'foot.tag':'Материалы для красивого дома','foot.up':'Наверх ↑','fab':'Написать'
+  }
+};
+
+let lang = localStorage.getItem('aizereLang') || 'kk';
+
+function applyLang(l){
+  lang = l;
+  const dict = I18N[l];
+  document.documentElement.lang = l;
+  localStorage.setItem('aizereLang', l);
+
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const v = dict[el.dataset.i18n];
+    if(v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const v = dict[el.dataset.i18nHtml];
+    if(v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === l);
+  });
+  document.title = l === 'ru'
+    ? 'ИП Айзере — материалы для вашего дома'
+    : 'ИП Айзере — үйіңізге арналған материалдар';
+
+  if(document.getElementById('cOut').classList.contains('show')) calculate();
+  renderLustra();
+}
+
+document.querySelectorAll('.lang button').forEach(b=>{
+  b.addEventListener('click', ()=> applyLang(b.dataset.lang));
+});
+
+/* ================== ЛЮСТРАЛАР КАТАЛОГЫ ==================
+   Люстра бойынша бөлек сатушы — нөмірі осында тұр.
+   Ауысса, тек мына жолды өзгертсеңіз жеткілікті.
+
+   ЖАҢА ЛЮСТРА ҚОСУ ҮШІН: төмендегі тізімге жаңа жол қосыңыз.
+   price: null — «Бағасын сұраңыз» деп көрсетіледі.
+   Нақты фото қосу үшін svg орнына: img:'photos/L-01.jpg' деп жазыңыз.
+========================================================= */
+const LUSTRA_PHONE = '77004708898';        // WhatsApp сілтемесі үшін
+const LUSTRA_PHONE_TXT = '+7 (700) 470-88-98';  // экранда көрінетін түрі
+
+const U = id => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=600&q=75`;
+
+const LUSTRA = [
+  {code:'Л-01', style:'modern',  room:'hall',    lamps:6,  price:null,
+   img:U('photo-1619810234452-76ebc1e520f0'),
+   kk:{n:'Заманауи қола',    d:'Ашық қола түсі, қонақ бөлмеге'},
+   ru:{n:'Современная латунь', d:'Светлая латунь, для гостиной'}},
+
+  {code:'Л-02', style:'classic', room:'hall',    lamps:12, price:null,
+   img:U('photo-1556494403-f90163a73c21'),
+   kk:{n:'Алтын хрусталь',   d:'Көп қабатты, салтанатты'},
+   ru:{n:'Золотой хрусталь', d:'Многоярусная, парадная'}},
+
+  {code:'Л-03', style:'loft',    room:'kitchen', lamps:3,  price:null,
+   img:U('photo-1446501356021-84cf6b450d07'),
+   kk:{n:'Лофт ілмелі',      d:'Металл, ашық шам'},
+   ru:{n:'Лофт подвес',      d:'Металл, открытая лампа'}},
+
+  {code:'Л-04', style:'classic', room:'hall',    lamps:8,  price:null,
+   img:U('photo-1630931507658-c6cd6217950e'),
+   kk:{n:'Классикалық қола', d:'Жылы жарық, хрусталь тамшылар'},
+   ru:{n:'Классическая латунь', d:'Тёплый свет, хрустальные подвески'}},
+
+  {code:'Л-05', style:'loft',    room:'kitchen', lamps:3,  price:null,
+   img:U('photo-1596205250168-c3583813eea0'),
+   kk:{n:'Қара ілмелі',      d:'Ас үстеліне, қатарлап ілінеді'},
+   ru:{n:'Чёрный подвес',    d:'Над обеденным столом, в ряд'}},
+
+  {code:'Л-06', style:'modern',  room:'hall',    lamps:9,  price:null,
+   img:U('photo-1625244724120-1fd1d34d00f6'),
+   kk:{n:'Алтын сәуле',      d:'Тарамдалған, биік төбеге'},
+   ru:{n:'Золотые лучи',     d:'Лучевая, для высоких потолков'}},
+
+  {code:'Л-07', style:'minimal', room:'bed',     lamps:1,  price:null,
+   img:U('photo-1612736228052-80e7f381690c'),
+   kk:{n:'Ақ абажур',        d:'Жұмсақ жарық, жатын бөлмеге'},
+   ru:{n:'Белый абажур',     d:'Мягкий свет, для спальни'}},
+
+  {code:'Л-08', style:'modern',  room:'bed',     lamps:4,  price:null,
+   img:U('photo-1540932239986-30128078f3c5'),
+   kk:{n:'Алтын шамдар',     d:'Әр биіктікте ілінген топ'},
+   ru:{n:'Золотые лампы',    d:'Группа на разной высоте'}}
+];
+
+const lGrid  = document.getElementById('lGrid');
+const lCount = document.getElementById('lCount');
+let fStyle='all', fRoom='all';
+
+function renderLustra(){
+  const d = I18N[lang];
+  const list = LUSTRA.filter(x =>
+    (fStyle==='all' || x.style===fStyle) && (fRoom==='all' || x.room===fRoom));
+
+  lCount.innerHTML = d['lu.found'].replace('%n', list.length);
+
+  if(!list.length){
+    lGrid.innerHTML = `<p class="lempty">${d['lu.empty']}</p>`;
+    return;
+  }
+
+  lGrid.innerHTML = list.map(x=>{
+    const t = x[lang];
+    const styleName = d['lu.'+x.style];
+    const price = x.price
+      ? `<p class="lprice">${new Intl.NumberFormat('ru-RU').format(x.price)} ₸</p>`
+      : `<p class="lprice ask">${d['lu.askPrice']}</p>`;
+    const msg = lang==='ru'
+      ? `Здравствуйте! Интересует люстра ${x.code} (${t.n}). Подскажите цену и наличие.`
+      : `Сәлеметсіз бе! ${x.code} люстрасы (${t.n}) қызықтырады. Бағасы мен бар-жоғын айтып жіберсеңіз.`;
+    return `<article class="lcard">
+      <div class="lpic"><span class="lcode">${x.code}</span><img src="${x.img}" alt="${t.n}" loading="lazy"></div>
+      <div class="lbody">
+        <h3 class="lname">${t.n}</h3>
+        <p class="lmeta">${styleName} · ${x.lamps} ${d['lu.lamps']}<br>${t.d}</p>
+        ${price}
+        <a class="lask" href="https://wa.me/${LUSTRA_PHONE}?text=${encodeURIComponent(msg)}" target="_blank" rel="noreferrer">${d['lu.ask']}</a>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+document.querySelectorAll('#fStyle .fbtn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#fStyle .fbtn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); fStyle=b.dataset.v; renderLustra();
+}));
+document.querySelectorAll('#fRoom .fbtn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#fRoom .fbtn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); fRoom=b.dataset.v; renderLustra();
+}));
+
+/* ================== МОБИЛЬДІ МЕНЮ ================== */
+const nav = document.querySelector('.nav');
+const menuBtn = document.querySelector('.menu-btn');
+menuBtn.addEventListener('click', ()=>{
+  const open = nav.classList.toggle('menu-open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  nav.classList.remove('menu-open');
+  menuBtn.setAttribute('aria-expanded','false');
+}));
+
+/* ================== ХЕДЕР КӨЛЕҢКЕСІ ================== */
+const header = document.querySelector('.header');
+window.addEventListener('scroll', ()=>{
+  header.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+/* ================== СҰРАҚ-ЖАУАП АККОРДЕОН ================== */
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click', ()=>{
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ================== КАЛЬКУЛЯТОР ================== */
+const fmt = n => new Intl.NumberFormat('ru-RU').format(Math.round(n));
+
+function calculate(){
+  const len = parseFloat(document.getElementById('cLen').value) || 0;
+  const wid = parseFloat(document.getElementById('cWid').value) || 0;
+  const sel = document.getElementById('cMat');
+  const price = parseFloat(sel.value);
+  const matName = sel.options[sel.selectedIndex].textContent.split('—')[0].trim();
+  const res = parseFloat(document.getElementById('cRes').value);
+
+  if(len <= 0 || wid <= 0){
+    alert(lang === 'ru'
+      ? 'Введите длину и ширину комнаты в метрах.'
+      : 'Бөлменің ұзындығы мен енін метрмен енгізіңіз.');
+    return;
+  }
+
+  const area = len * wid;
+  const total = area * (1 + res/100);
+  const sum = total * price;
+  const unit = lang === 'ru' ? ' м²' : ' м²';
+
+  document.getElementById('rArea').textContent = area.toFixed(1) + unit;
+  document.getElementById('rTotal').textContent = total.toFixed(1) + unit;
+  document.getElementById('rPrice').textContent = fmt(price) + ' ₸';
+  document.getElementById('rSum').textContent = fmt(sum) + ' ₸';
+  document.getElementById('cOut').classList.add('show');
+
+  const msg = lang === 'ru'
+    ? `Здравствуйте! Хочу уточнить по расчёту:\nМатериал: ${matName}\nКомната: ${len} × ${wid} м (${area.toFixed(1)} м²)\nС запасом ${res}%: ${total.toFixed(1)} м²\nПримерная сумма: ${fmt(sum)} ₸`
+    : `Сәлеметсіз бе! Есеп бойынша нақтылағым келеді:\nМатериал: ${matName}\nБөлме: ${len} × ${wid} м (${area.toFixed(1)} м²)\n${res}% қормен: ${total.toFixed(1)} м²\nШамамен сомасы: ${fmt(sum)} ₸`;
+
+  document.getElementById('cSend').href = 'https://wa.me/77024708898?text=' + encodeURIComponent(msg);
+}
+
+document.getElementById('cGo').addEventListener('click', calculate);
+['cLen','cWid'].forEach(id=>{
+  document.getElementById(id).addEventListener('keydown', e=>{ if(e.key === 'Enter') calculate(); });
+});
+document.getElementById('cMat').addEventListener('change', ()=>{
+  if(document.getElementById('cOut').classList.contains('show')) calculate();
+});
+document.getElementById('cRes').addEventListener('change', ()=>{
+  if(document.getElementById('cOut').classList.contains('show')) calculate();
+});
+
+/* ================== БАСТАУ ================== */
+applyLang(lang);
+document.querySelector('.faq-item').classList.add('open');
+</script>
+</body>
+</html>
